@@ -13,7 +13,6 @@ export const SidebarItem = ({title, body, id, date, imageURL = []}) => {
         dispatch(setActiveNote({title, body, id, date, imageURL}))
     }
     
-    //memorizar el titulo que recibo, y si supera los 9 caracteres, con substring lo corto y le agrego los 3 puntitos, sino, lo devuelve tal cual viene de firebase
     const newTitle = useMemo( () => {
 
         return title.length > 12

@@ -29,13 +29,6 @@ export const AppRouter = () => {
       }
 
       <Route path="/*" element={ <Navigate to='/auth/login'  />}/>
-        {/* login y registro */}
-        {/* se pone /auth/* para hacer referencia a que cualquier pagina o path que este dentro de auth, me va a mostrar authroutes */}
-        {/* <Route path="/auth/*" element={ <AuthRoutes /> }/> */}
-
-        {/* JournalApp */}
-        {/* <Route path="/*" element={ <JournalRoutes  /> } /> */}
-
 
     </Routes>
   )

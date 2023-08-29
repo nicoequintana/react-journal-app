@@ -5,8 +5,6 @@ import { JournalLayout } from "../layout/JournalLayout";
 import { AddOutlined, MailOutline } from "@mui/icons-material";
 import { IconButton } from "@mui/material";
 
-//import { Typography } from "@mui/material";
-
 
 export const JournalPage = () => {
 

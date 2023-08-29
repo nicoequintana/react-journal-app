@@ -11,14 +11,11 @@ export const signInWithGoogle = async () => {
     try {
 
         const result = await signInWithPopup( FirebaseAuth, googleProvider);
-        //const credentials = GoogleAuthProvider.credentialFromResult( result );
 
-        //aca yo desestructura y capto los datos que quiero del 'result' del user. Esta ingo mel a proporciona firebase con google cuando hago la autenticacion.
         const { displayName, email, photoURL, uid } = result.user;
 
-        return { //este return, es lo que me devuelve la funcion signInWithGoogle. En el return devuelvo si esta ok o no, y los datos que desestructure arriba en el try del result.user.
+        return { 
             ok: true, 
-            //informacion del usuario
             displayName, email, photoURL, uid
         }
         
@@ -47,10 +44,8 @@ export const registerUserLocal = async({ email, password, displayName }) => {
 
     
     try {
-        //esta funcion viene de firebase
         const resp = await createUserWithEmailAndPassword(FirebaseAuth, email, password);
         const { uid, photoURL } = resp.user
-        //la funcion updateProfile viene de Firebase. con FirebaseAuth.currentUser puedo saber que usuario esta logueado actualmente y obtener el displayName.
         await updateProfile( FirebaseAuth.currentUser, { displayName } )
 
 
@@ -71,7 +66,6 @@ export const registerUserLocal = async({ email, password, displayName }) => {
 }
 
 
-//crear una accion para que usar en el thunk y validar si el usuario existe en firebase
 export const loginWithEmailPassword = async({ email, password }) => {
 
     try{

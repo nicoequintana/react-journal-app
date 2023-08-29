@@ -31,9 +31,7 @@ export const RegisterPage = () => {
   const isCheckingAuthentication = useMemo( () => status === 'checking', [status])
 
   const { 
-    //aca desestructuro displayName, que no lo tenia, y ademas, isFormValid para saber si el formulario es valido o no y asi poder mostrar errores, y ademas, incluyo emailValid, displayNameValid y passwordValid.
     displayName, email, password, onInputChange, formState, isFormValid, emailValid, passwordValid, displayNameValid 
-    //en useForm, paso el formData que cree por fuera del componente funcional y ademas, como segundo argument,le paso el formValidation.
   } = useForm( formData, formValidations );
 
 
@@ -58,7 +56,6 @@ export const RegisterPage = () => {
 
             <Grid item xs={ 12 }  sx={{ mt: 2 }}>
 
-              {/* aca uso la doble negacion en error{} '!!' para convertirlo en un valor buleano, si es false el displayNameValid entonces muestra el error */}
               <TextField 
               label='Nombre Completo' 
               type='text' 

@@ -13,7 +13,6 @@ export const startNewNote = () => {
         const { isSaving }= getState().journal
         
 
-        //para grabar en firebase vamos a usar el uid del usuario
         const newNote = {
             title: '',
             body: '',
@@ -21,7 +20,6 @@ export const startNewNote = () => {
             date: new Date().getTime(),
         };
 
-        //vamos a crear la referencia al documento donde quiero insertar la nota    
         const newDoc = doc( collection( FirebaseDB, `${uid}/journal/notes` ) )
         await setDoc( newDoc, newNote )
 
@@ -31,7 +29,6 @@ export const startNewNote = () => {
         
         dispatch(addNewEmptyNote(newNote));
         dispatch(setActiveNote(newNote));
-        //dispatch para activar la nota
     }
 
 
